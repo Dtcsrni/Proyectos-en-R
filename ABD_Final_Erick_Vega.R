@@ -11,10 +11,12 @@ excel_sheets(ruta_excel)
 #Carga de dataset inicial de xlsx a memoria de R
 caso1 = read_excel(ruta_excel)
 
-#Extrayendo los valores de cada rubro para cada profesor en forma de lista, luego se convierte a tipo numero con as.numeric, al cual se le pasa de argumento el valor del subset deslistado
+#Extrayendo los valores de cada rubro para cada profesor en forma de lista, luego se convierte a tipo numero con as.numeric, 
+#al cual se le pasa de argumento el valor del subset deslistado
+
 #Rosas
 calif_temario_rosas = subset(caso1, nombre_docente == "Rosas", select=Temario_completo)
-calif_temario_rosas= as.numeric(unlist(calif_temario_rosas))
+calif_temario_rosas= as.numeric(unlist(calif_temario_rosas)) #se convierte el vector desenlistado a numero
 
 calif_dominio_rosas = subset(caso1, nombre_docente == "Rosas", select=dominio_tema)
 calif_dominio_rosas = as.numeric(unlist(calif_dominio_rosas))
