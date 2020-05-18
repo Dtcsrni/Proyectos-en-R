@@ -314,14 +314,27 @@ plot(prom_colaboracion)
 promedio_todos_rubros = c(promedio_temario, promedio_dominio, promedio_adaptabilidad, promedio_integracion, promedio_flexibilidad, promedio_explicaciones, promedio_metodos, promedio_ambiente, promedio_evaluacion, promedio_colaboracion)
 
 #creando un vector de nombres de rubros
-rubros =c("Temario", "Dominio", "Adaptabilidad", "Integración", "Flexibilidad","Claridad","Metodos", "Ambiente","Evaluación","Colaboración")
+Rubros =c("Temario", "Dominio", "Adaptabilidad", "Integración", "Flexibilidad","Claridad","Metodos", "Ambiente","Evaluación","Colaboración")
 
 #metiendo en un solo data frame promedio de rubros y sus nombres
-datos_rubros = data.frame(rubros,promedio_todos_rubros)
+datos_rubros = data.frame(Rubros,promedio_todos_rubros)
 
 #graficar rubros
 plot(datos_rubros)
 
-
-
+#promediando cada rubro para cada profesor y graficando
+#Rosas
+prom_temario_rosas = mean(calif_temario_rosas)
+prom_dominio_rosas = mean(calif_dominio_rosas)
+prom_adaptabilidad_rosas = mean(calif_adaptabilidad_rosas)
+prom_integracion_rosas = mean(calif_integracion_rosas)
+prom_flexibilidad_rosas = mean(calif_flexibilidad_rosas)
+prom_explicaciones_rosas = mean(calif_explicaciones_rosas)
+prom_metodos_rosas = mean(calif_metodos_rosas)
+prom_ambiente_rosas = mean(calif_ambiente_rosas)
+prom_evaluacion_rosas = mean(calif_evaluacion_rosas)
+prom_colaboracion_rosas = mean(calif_colaboracion_rosas)
+promedio_total_rosas = c(prom_temario_rosas,prom_dominio_rosas,prom_adaptabilidad_rosas,prom_integracion_rosas, prom_flexibilidad_rosas,prom_explicaciones_rosas,prom_metodos_rosas,prom_ambiente_rosas,prom_evaluacion_rosas,prom_colaboracion_rosas)
+datos_rosas = data.frame(Rubros, promedio_total_rosas)
+plot(datos_rosas)
 
