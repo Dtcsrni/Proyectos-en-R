@@ -311,6 +311,15 @@ plot(prom_colaboracion)
 #almacenando todos los rubros en un solo vector
 promedio_todos_rubros = c(promedio_temario, promedio_dominio, promedio_adaptabilidad, promedio_integracion, promedio_flexibilidad, promedio_explicaciones, promedio_metodos, promedio_ambiente, promedio_evaluacion, promedio_colaboracion)
 
-#graficando el vector de rubros
-plot(promedio_todos_rubros)
+#creando un vector de nombres de rubros
+rubros =c("Temario", "Dominio", "Adaptabilidad", "Integración", "Flexibilidad","Claridad","Metodos", "Ambiente","Evaluación","Colaboración")
+
+#metiendo en un solo data frame promedio de rubros y sus nombres
+datos_rubros = data.frame(rubros,promedio_todos_rubros)
+
+#graficar rubros
+plot(datos_rubros)
+
+
+
 
