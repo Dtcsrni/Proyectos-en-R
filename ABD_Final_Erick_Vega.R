@@ -1,11 +1,10 @@
-#Instalación de librerías a utilizar
+#InstalaciÃ³n de librerÃ­as a utilizar
 install.packages("readxl")
 library(readxl)
-library(tidyverse)
 
-#Obtención de ruta de fichero xlsx
+#ObtenciÃ³n de ruta de fichero xlsx
 file.choose()
-ruta_excel = "D:\\Descargas\\Evaluación de desempeño de docentes de sistemas de CUH (respuestas).xlsx"
+ruta_excel = "D:\\Descargas\\EvaluaciÃ³n de desempeÃ±o de docentes de sistemas de CUH (respuestas).xlsx"
 excel_sheets(ruta_excel)
 
 #Carga de dataset inicial de xlsx a memoria de R
@@ -16,7 +15,7 @@ caso1 = read_excel(ruta_excel)
 calif_temario_rosas = subset(caso1, nombre_docente == "Rosas", select=Temario_completo)
 calif_dominio_rosas = subset(caso1, nombre_docente == "Rosas", select=dominio_tema)
 calif_adaptabilidad_rosas = subset(caso1, nombre_docente == "Rosas", select=adaptabilidad_aprendizaje)
-calif_integracion_rosas = subset(caso1, nombre_docente == "Rosas", select=integracion_enseñanza)
+calif_integracion_rosas = subset(caso1, nombre_docente == "Rosas", select=integracion_enseÃ±anza)
 calif_flexibilidad_rosas = subset(caso1, nombre_docente == "Rosas", select=flexibilidad_socioeconomica)
 calif_explicaciones_rosas = subset(caso1, nombre_docente == "Rosas", select=explicaciones_claras)
 calif_metodos_rosas = subset(caso1, nombre_docente == "Rosas", select=uso_metodos_didacticos)
@@ -29,7 +28,7 @@ vector_combinado = c(calif_temario_rosas, calif_dominio_rosas, calif_adaptabilid
 calif_temario_alejandra = subset(caso1, nombre_docente == "Alejandra", select=Temario_completo)
 calif_dominio_alejandra = subset(caso1, nombre_docente == "Alejandra", select=dominio_tema)
 calif_adaptabilidad_alejandra = subset(caso1, nombre_docente == "Alejandra", select=adaptabilidad_aprendizaje)
-calif_integracion_alejandra = subset(caso1, nombre_docente == "Alejandra", select=integracion_enseñanza)
+calif_integracion_alejandra = subset(caso1, nombre_docente == "Alejandra", select=integracion_enseÃ±anza)
 calif_flexibilidad_alejandra = subset(caso1, nombre_docente == "Alejandra", select=flexibilidad_socioeconomica)
 calif_explicaciones_alejandra = subset(caso1, nombre_docente == "Alejandra", select=explicaciones_claras)
 calif_metodos_alejandra = subset(caso1, nombre_docente == "Alejandra", select=uso_metodos_didacticos)
@@ -41,7 +40,7 @@ calif_colaboracion_alejandra = subset(caso1, nombre_docente == "Alejandra", sele
 calif_temario_ismael = subset(caso1, nombre_docente == "Ismael", select=Temario_completo)
 calif_dominio_ismael = subset(caso1, nombre_docente == "Ismael", select=dominio_tema)
 calif_adaptabilidad_ismael = subset(caso1, nombre_docente == "Ismael", select=adaptabilidad_aprendizaje)
-calif_integracion_ismael = subset(caso1, nombre_docente == "Ismael", select=integracion_enseñanza)
+calif_integracion_ismael = subset(caso1, nombre_docente == "Ismael", select=integracion_enseÃ±anza)
 calif_flexibilidad_ismael = subset(caso1, nombre_docente == "Ismael", select=flexibilidad_socioeconomica)
 calif_explicaciones_ismael = subset(caso1, nombre_docente == "Ismael", select=explicaciones_claras)
 calif_metodos_ismael = subset(caso1, nombre_docente == "Ismael", select=uso_metodos_didacticos)
@@ -49,23 +48,23 @@ calif_ambiente_ismael = subset(caso1, nombre_docente == "Ismael", select=ambient
 calif_evaluacion_ismael = subset(caso1, nombre_docente == "Ismael", select=evaluacion_objetiva)
 calif_colaboracion_ismael = subset(caso1, nombre_docente == "Ismael", select=colaboracion_pares)
 
-#Angélica
-calif_temario_angelica = subset(caso1, nombre_docente == "Angélica", select=Temario_completo)
-calif_dominio_angelica = subset(caso1, nombre_docente == "Angélica", select=dominio_tema)
-calif_adaptabilidad_angelica = subset(caso1, nombre_docente == "Angélica", select=adaptabilidad_aprendizaje)
-calif_integracion_angelica = subset(caso1, nombre_docente == "Angélica", select=integracion_enseñanza)
-calif_flexibilidad_angelica = subset(caso1, nombre_docente == "Angélica", select=flexibilidad_socioeconomica)
-calif_explicaciones_angelica = subset(caso1, nombre_docente == "Angélica", select=explicaciones_claras)
-calif_metodos_angelica = subset(caso1, nombre_docente == "Angélica", select=uso_metodos_didacticos)
-calif_ambiente_angelica = subset(caso1, nombre_docente == "Angélica", select=ambiente_colaborativo)
-calif_evaluacion_angelica = subset(caso1, nombre_docente == "Angélica", select=evaluacion_objetiva)
-calif_colaboracion_angelica = subset(caso1, nombre_docente == "Angélica", select=colaboracion_pares)
+#AngÃ©lica
+calif_temario_angelica = subset(caso1, nombre_docente == "AngÃ©lica", select=Temario_completo)
+calif_dominio_angelica = subset(caso1, nombre_docente == "AngÃ©lica", select=dominio_tema)
+calif_adaptabilidad_angelica = subset(caso1, nombre_docente == "AngÃ©lica", select=adaptabilidad_aprendizaje)
+calif_integracion_angelica = subset(caso1, nombre_docente == "AngÃ©lica", select=integracion_enseÃ±anza)
+calif_flexibilidad_angelica = subset(caso1, nombre_docente == "AngÃ©lica", select=flexibilidad_socioeconomica)
+calif_explicaciones_angelica = subset(caso1, nombre_docente == "AngÃ©lica", select=explicaciones_claras)
+calif_metodos_angelica = subset(caso1, nombre_docente == "AngÃ©lica", select=uso_metodos_didacticos)
+calif_ambiente_angelica = subset(caso1, nombre_docente == "AngÃ©lica", select=ambiente_colaborativo)
+calif_evaluacion_angelica = subset(caso1, nombre_docente == "AngÃ©lica", select=evaluacion_objetiva)
+calif_colaboracion_angelica = subset(caso1, nombre_docente == "AngÃ©lica", select=colaboracion_pares)
 
 #Daniel
 calif_temario_daniel = subset(caso1, nombre_docente == "Daniel", select=Temario_completo)
 calif_dominio_daniel = subset(caso1, nombre_docente == "Daniel", select=dominio_tema)
 calif_adaptabilidad_daniel = subset(caso1, nombre_docente == "Daniel", select=adaptabilidad_aprendizaje)
-calif_integracion_daniel = subset(caso1, nombre_docente == "Daniel", select=integracion_enseñanza)
+calif_integracion_daniel = subset(caso1, nombre_docente == "Daniel", select=integracion_enseÃ±anza)
 calif_flexibilidad_daniel = subset(caso1, nombre_docente == "Daniel", select=flexibilidad_socioeconomica)
 calif_explicaciones_daniel = subset(caso1, nombre_docente == "Daniel", select=explicaciones_claras)
 calif_metodos_daniel = subset(caso1, nombre_docente == "Daniel", select=uso_metodos_didacticos)
@@ -77,7 +76,7 @@ calif_colaboracion_daniel = subset(caso1, nombre_docente == "Daniel", select=col
 calif_temario_gustavo = subset(caso1, nombre_docente == "Gustavo", select=Temario_completo)
 calif_dominio_gustavo = subset(caso1, nombre_docente == "Gustavo", select=dominio_tema)
 calif_adaptabilidad_gustavo = subset(caso1, nombre_docente == "Gustavo", select=adaptabilidad_aprendizaje)
-calif_integracion_gustavo = subset(caso1, nombre_docente == "Gustavo", select=integracion_enseñanza)
+calif_integracion_gustavo = subset(caso1, nombre_docente == "Gustavo", select=integracion_enseÃ±anza)
 calif_flexibilidad_gustavo = subset(caso1, nombre_docente == "Gustavo", select=flexibilidad_socioeconomica)
 calif_explicaciones_gustavo = subset(caso1, nombre_docente == "Gustavo", select=explicaciones_claras)
 calif_metodos_gustavo = subset(caso1, nombre_docente == "Gustavo", select=uso_metodos_didacticos)
@@ -89,7 +88,7 @@ calif_colaboracion_gustavo = subset(caso1, nombre_docente == "Gustavo", select=c
 calif_temario_lorena = subset(caso1, nombre_docente == "Lorena", select=Temario_completo)
 calif_dominio_lorena = subset(caso1, nombre_docente == "Lorena", select=dominio_tema)
 calif_adaptabilidad_lorena = subset(caso1, nombre_docente == "Lorena", select=adaptabilidad_aprendizaje)
-calif_integracion_lorena = subset(caso1, nombre_docente == "Lorena", select=integracion_enseñanza)
+calif_integracion_lorena = subset(caso1, nombre_docente == "Lorena", select=integracion_enseÃ±anza)
 calif_flexibilidad_lorena = subset(caso1, nombre_docente == "Lorena", select=flexibilidad_socioeconomica)
 calif_explicaciones_lorena = subset(caso1, nombre_docente == "Lorena", select=explicaciones_claras)
 calif_metodos_lorena = subset(caso1, nombre_docente == "Lorena", select=uso_metodos_didacticos)
@@ -101,7 +100,7 @@ calif_colaboracion_lorena = subset(caso1, nombre_docente == "Lorena", select=col
 calif_temario_enrique = subset(caso1, nombre_docente == "Enrique", select=Temario_completo)
 calif_dominio_enrique = subset(caso1, nombre_docente == "Enrique", select=dominio_tema)
 calif_adaptabilidad_enrique = subset(caso1, nombre_docente == "Enrique", select=adaptabilidad_aprendizaje)
-calif_integracion_enrique = subset(caso1, nombre_docente == "Enrique", select=integracion_enseñanza)
+calif_integracion_enrique = subset(caso1, nombre_docente == "Enrique", select=integracion_enseÃ±anza)
 calif_flexibilidad_enrique = subset(caso1, nombre_docente == "Enrique", select=flexibilidad_socioeconomica)
 calif_explicaciones_enrique = subset(caso1, nombre_docente == "Enrique", select=explicaciones_claras)
 calif_metodos_enrique = subset(caso1, nombre_docente == "Enrique", select=uso_metodos_didacticos)
