@@ -10,13 +10,8 @@ excel_sheets(ruta_excel)
 
 #Carga de dataset inicial de xlsx a memoria de R
 caso1 = read_excel(ruta_excel)
-caso1
 
-
-#Definiendo el nombre de cada profesor en un conjunto unificado
-conjunto_docentes = c("Rosas", "Alejandra", "Ismael", "Angélica", "Daniel", "Gustavo", "Lorena", "Enrique")
-
-
+#Extrayendo los valores de cada rubro para cada profesor y almacenandolo en el vector correspondiente
 #Rosas
 calif_temario_rosas = subset(caso1, nombre_docente == "Rosas", select=Temario_completo)
 calif_dominio_rosas = subset(caso1, nombre_docente == "Rosas", select=dominio_tema)
@@ -115,20 +110,5 @@ calif_evaluacion_enrique = subset(caso1, nombre_docente == "Enrique", select=eva
 calif_colaboracion_enrique = subset(caso1, nombre_docente == "Enrique", select=colaboracion_pares)
 
 
-
-
-
-promedio_ = mean(calificaciones_1)
-
-
-
-
-promedios= c(promedio1, promedio2, promedio3, promedio4, promedio5, promedio6, promedio7, promedio8)
-
-promedios = sort(promedios, decreasing = TRUE)
-
-
-
-plot(datos2)
 
 
