@@ -283,7 +283,7 @@ prom_evaluacion = c(mean(calif_evaluacion_rosas), mean(calif_evaluacion_lorena),
 prom_colaboracion = c(mean(calif_colaboracion_rosas), mean(calif_colaboracion_lorena), mean(calif_colaboracion_ismael), mean(calif_colaboracion_gustavo), mean(calif_colaboracion_enrique), mean(calif_colaboracion_daniel), mean(calif_colaboracion_angelica), mean(calif_colaboracion_alejandra))
 
 
-#promediando
+#promediando cada rubro 
 promedio_temario = mean(prom_temario)
 promedio_dominio = mean(prom_dominio)
 promedio_adaptabilidad = mean(prom_adaptabilidad)
@@ -295,7 +295,7 @@ promedio_ambiente = mean(prom_ambiente)
 promedio_evaluacion = mean(prom_evaluacion)
 promedio_colaboracion = mean(prom_colaboracion)
 
-#graficando el promedio de 
+#graficando el promedio de cada rubro
 plot(prom_temario)
 plot(prom_dominio)
 plot(prom_adaptabilidad)
@@ -308,15 +308,9 @@ plot(prom_evaluacion)
 plot(prom_colaboracion)
 
 
+#almacenando todos los rubros en un solo vector
+promedio_todos_rubros = c(promedio_temario, promedio_dominio, promedio_adaptabilidad, promedio_integracion, promedio_flexibilidad, promedio_explicaciones, promedio_metodos, promedio_ambiente, promedio_evaluacion, promedio_colaboracion)
 
-plot(promedio_temario)
-plot(promedio_dominio)
-plot(promedio_adaptabilidad)
-plot(promedio_integracion)
-plot(promedio_flexibilidad)
-plot(promedio_explicaciones)
-plot(promedio_metodos)
-plot(promedio_ambiente)
-plot(promedio_evaluacion)
-plot(promedio_colaboracion)
+#graficando el vector de rubros
+plot(promedio_todos_rubros)
 
