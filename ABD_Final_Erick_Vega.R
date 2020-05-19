@@ -354,9 +354,8 @@ promedio_total_enrique = mean(rubros_Enrique)
 
 #metiendo en un solo data frame rubro de profesores y nombre de profesores
 rubros_totales = c(promedio_total_rosas,promedio_total_alejandra, promedio_total_ismael, promedio_total_angelica, promedio_total_daniel, promedio_total_gustavo, promedio_total_lorena, promedio_total_enrique)
-rubros_totales = sort(rubros_totales, decreasing = TRUE)
-datos_rubros = data.frame(Profesores,rubros_totales)
 
+datos_rubros = data.frame(Profesores,rubros_totales)
 #graficando de forma ordenada de mayor a menor
 ggplot(data=datos_rubros, aes(x= reorder(Profesores, -rubros_totales), y=rubros_totales)) + 
   geom_bar(stat="identity", position="stack") # position=position.stack se puede abreviar con position="stack".
