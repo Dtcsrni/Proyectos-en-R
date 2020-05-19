@@ -1,7 +1,9 @@
 #Instalación de librerías a utilizar
 install.packages("readxl")
-library(readxl)
+install.packages("ggplot2")
 
+library(readxl)
+library(ggplot2)
 
 
 #Obtención de ruta de fichero xlsx
@@ -315,6 +317,8 @@ promedio_todos_rubros = c(promedio_temario, promedio_dominio, promedio_adaptabil
 
 #creando un vector de nombres de rubros
 Rubros =c("Temario", "Dominio", "Adaptabilidad", "Integración", "Flexibilidad","Claridad","Metodos", "Ambiente","Evaluación","Colaboración")
+#creando vector de nombre de profesores
+Profesores = c("Rosas", "Alejandra", "Ismael", "Angélica", "Daniel", "Gustavo", "Lorena", "Enrique")
 
 #metiendo en un solo data frame promedio de rubros y sus nombres
 datos_rubros = data.frame(Rubros,promedio_todos_rubros)
@@ -322,19 +326,38 @@ datos_rubros = data.frame(Rubros,promedio_todos_rubros)
 #graficar rubros
 plot(datos_rubros)
 
-#promediando cada rubro para cada profesor y graficando
+#promediando calificación general de cada profesor
 #Rosas
-prom_temario_rosas = mean(calif_temario_rosas)
-prom_dominio_rosas = mean(calif_dominio_rosas)
-prom_adaptabilidad_rosas = mean(calif_adaptabilidad_rosas)
-prom_integracion_rosas = mean(calif_integracion_rosas)
-prom_flexibilidad_rosas = mean(calif_flexibilidad_rosas)
-prom_explicaciones_rosas = mean(calif_explicaciones_rosas)
-prom_metodos_rosas = mean(calif_metodos_rosas)
-prom_ambiente_rosas = mean(calif_ambiente_rosas)
-prom_evaluacion_rosas = mean(calif_evaluacion_rosas)
-prom_colaboracion_rosas = mean(calif_colaboracion_rosas)
-promedio_total_rosas = c(prom_temario_rosas,prom_dominio_rosas,prom_adaptabilidad_rosas,prom_integracion_rosas, prom_flexibilidad_rosas,prom_explicaciones_rosas,prom_metodos_rosas,prom_ambiente_rosas,prom_evaluacion_rosas,prom_colaboracion_rosas)
-datos_rosas = data.frame(Rubros, promedio_total_rosas)
-plot(datos_rosas)
+rubros_rosas = c(mean(calif_temario_rosas), mean(calif_dominio_rosas), mean(calif_adaptabilidad_rosas), mean(calif_integracion_rosas), mean(calif_flexibilidad_rosas), mean(calif_explicaciones_rosas), mean(calif_metodos_rosas), mean(calif_ambiente_rosas), mean(calif_evaluacion_rosas), mean(calif_colaboracion_rosas))
+promedio_total_rosas = mean(rubros_rosas)
+#Alejandra
+rubros_Alejandra = c(mean(calif_temario_alejandra), mean(calif_dominio_alejandra), mean(calif_adaptabilidad_alejandra), mean(calif_integracion_alejandra), mean(calif_flexibilidad_alejandra), mean(calif_explicaciones_alejandra), mean(calif_metodos_alejandra), mean(calif_ambiente_alejandra), mean(calif_evaluacion_alejandra), mean(calif_colaboracion_alejandra))
+promedio_total_alejandra = mean(rubros_Alejandra)
+#Ismael
+rubros_Ismael = c(mean(calif_temario_ismael), mean(calif_dominio_ismael), mean(calif_adaptabilidad_ismael), mean(calif_integracion_ismael), mean(calif_flexibilidad_ismael), mean(calif_explicaciones_ismael), mean(calif_metodos_ismael), mean(calif_ambiente_ismael), mean(calif_evaluacion_ismael), mean(calif_colaboracion_ismael))
+promedio_total_ismael = mean(rubros_Ismael)
+#Angélica
+rubros_Angelica = c(mean(calif_temario_angelica), mean(calif_dominio_angelica), mean(calif_adaptabilidad_angelica), mean(calif_integracion_angelica), mean(calif_flexibilidad_angelica), mean(calif_explicaciones_angelica), mean(calif_metodos_angelica), mean(calif_ambiente_angelica), mean(calif_evaluacion_angelica), mean(calif_colaboracion_angelica))
+promedio_total_angelica = mean(rubros_Angelica)
+#Daniel
+rubros_Daniel = c(mean(calif_temario_daniel), mean(calif_dominio_daniel), mean(calif_adaptabilidad_daniel), mean(calif_integracion_daniel), mean(calif_flexibilidad_daniel), mean(calif_explicaciones_daniel), mean(calif_metodos_daniel), mean(calif_ambiente_daniel), mean(calif_evaluacion_daniel), mean(calif_colaboracion_daniel))
+promedio_total_daniel = mean(rubros_Daniel)
+#Gustavo
+rubros_Gustavo = c(mean(calif_temario_gustavo), mean(calif_dominio_gustavo), mean(calif_adaptabilidad_gustavo), mean(calif_integracion_gustavo), mean(calif_flexibilidad_gustavo), mean(calif_explicaciones_gustavo), mean(calif_metodos_gustavo), mean(calif_ambiente_gustavo), mean(calif_evaluacion_gustavo), mean(calif_colaboracion_gustavo))
+promedio_total_gustavo = mean(rubros_Gustavo)
+#Lorena
+rubros_Lorena = c(mean(calif_temario_lorena), mean(calif_dominio_lorena), mean(calif_adaptabilidad_lorena), mean(calif_integracion_lorena), mean(calif_flexibilidad_lorena), mean(calif_explicaciones_lorena), mean(calif_metodos_lorena), mean(calif_ambiente_lorena), mean(calif_evaluacion_lorena), mean(calif_colaboracion_lorena))
+promedio_total_lorena = mean(rubros_Lorena)
+#Enrique
+rubros_Enrique = c(mean(calif_temario_enrique), mean(calif_dominio_enrique), mean(calif_adaptabilidad_enrique), mean(calif_integracion_enrique), mean(calif_flexibilidad_enrique), mean(calif_explicaciones_enrique), mean(calif_metodos_enrique), mean(calif_ambiente_enrique), mean(calif_evaluacion_enrique), mean(calif_colaboracion_enrique))
+promedio_total_enrique = mean(rubros_Enrique)
+
+#metiendo en un solo data frame rubro de profesores y nombre de profesores
+rubros_totales = c(promedio_total_rosas,promedio_total_alejandra, promedio_total_ismael, promedio_total_angelica, promedio_total_daniel, promedio_total_gustavo, promedio_total_lorena, promedio_total_enrique)
+rubros_totales = sort(rubros_totales, decreasing = TRUE)
+datos_rubros = data.frame(Profesores,rubros_totales)
+
+#graficando de forma ordenada de mayor a menor
+ggplot(data=datos_rubros, aes(x= reorder(Profesores, -rubros_totales), y=rubros_totales)) + 
+  geom_bar(stat="identity", position="stack") # position=position.stack se puede abreviar con position="stack".
 
